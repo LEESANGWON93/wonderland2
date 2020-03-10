@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- head 안에 들어 갈 어떤 요소들을 여기에 넣습니다(이곳은 주석 영역으로 화면에 표시되지 않음!) -->
-    <!-- version1 -->
+    <!-- 질문: 다른 글자가 같은 줄에 오게 하는 법, 연속 선상에 같은 그림이 위치하게 하는 법 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1주차 HW</title>
@@ -23,66 +22,84 @@
         crossorigin="anonymous"></script>
 
     <style>
+        .logo {
+            width: 100px;
+            margin: 0 0 0 50px;
+        }
+
         .cos {
             width: 534px;
             height: 502px;
-            margin: 15px 0 0 0;
+            margin: -50px 0 0 0;
         }
+
         .wrap {
             text-align: center;
+        }
+
+        .container {
+            width: 1020px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
         }
     </style>
 </head>
 
 <body>
-    <!-- body 안에 들어 갈 어떤 요소들을 여기에 넣습니다 -->
-    <!-- 구역을 나누는 태그들 -->
-    <!-- 구역 내 콘텐츠 태그들 -->
-
+    <!-- 그림 -->
+    <img class="logo"
+        src="data:image/png;base64,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">
     <img class="cos" src="https://image.thehyundai.com/static/8/2/3/06/A1/hnm40A1063285_02_0864811_001_001_720.jpg"
         style="margin-left: auto; margin-right: auto; display: block;" />
 
+    <!-- 텍스트 -->
     <div class="wrap">
         <p>
             <h2>릴렉스드 핏 울 블레이저</h2>
             290,000원
         </p>
         <p>
-            자연스러운 테일러링. 여유로운 스타일을 연출하는 릴랙스드 핏의 울 소재 블레이저입니다. 100% 울 / 안감: 100% 비스코스 / 드라이 클리닝
+            자연스러운 테일러링. 여유로운 스타일을 연출하는 릴랙스드 핏의 울 소재 블레이저입니다. (100% 울 / 안감: 100% 비스코스 / 드라이 클리닝)
         </p>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">주문자 이름</span>
-            </div>
-            <input type="text" class="form-control" aria-describedby="basic-addon1">
-        </div>
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">사이즈</label>
+        <!-- 부트스트랩 -->
+        <div class="container">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">주문자</span>
+                </div>
+                <input type="text" class="form-control" placeholder="이름을 입력하세요" aria-label="이름을 입력하세요" aria-describedby="basic-addon1">
             </div>
-            <select class="custom-select" id="inputGroupSelect01">
-                <option selected>- 사이즈를 선택하세요 -</option>
-                <option value="1">44</option>
-                <option value="2">46</option>
-                <option value="3">48</option>
-                <option value="4">50</option>
-                <option value="5">52</option>
-            </select>
-        </div>
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">주소</span>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">사이즈</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>- 사이즈를 선택하세요 -</option>
+                    <option value="1">44</option>
+                    <option value="2">46</option>
+                    <option value="3">48</option>
+                    <option value="4">50</option>
+                    <option value="5">52</option>
+                </select>
             </div>
-            <input type="text" class="form-control">
-        </div>
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">전화번호</span>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">배송지</span>
+                </div>
+                <input type="text" class="form-control">
             </div>
-            <input type="text" class="form-control">
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">연락처</span>
+                </div>
+                <input type="text" class="form-control">
+            </div>
         </div>
 
         <button type="button" class="btn btn-outline-secondary">주문하기</button>
