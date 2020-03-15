@@ -32,7 +32,17 @@
     <!-- Java -->
     <script>
         function cart() {
-            alert('장바구니에 상품이 담겼습니다.');
+            let clicked = $('#sizes').val()
+
+            if (clicked == 0) {
+
+                alert('사이즈를 선택하세요');
+            }
+            else {
+
+                alert('장바구니에 상품이 담겼습니다.');
+            }
+
         }
 
         function bill() {
@@ -62,12 +72,12 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100"
-                    src="https://image.thehyundai.com/static/8/2/3/06/A1/hnm40A1063285_02_0864811_001_001_720.jpg"
+                    src="https://image.thehyundai.com/static/8/2/3/06/A1/hnm40A1063285_01_0864811_001_002_720.jpg"
                     alt="First slide">
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100"
-                    src="https://image.thehyundai.com/static/8/2/3/06/A1/hnm40A1063285_02_0864811_001_001_720.jpg"
+                    src="https://image.thehyundai.com/static/8/2/3/06/A1/hnm40A1063285_01_0864811_001_003_720.jpg"
                     alt="Second slide">
             </div>
             <div class="carousel-item">
@@ -109,14 +119,15 @@
     </div>
 
     <div class="container wrap" style="margin-bottom: 15px;">
-        <button type="button" class="btn btn-outline-secondary">44</button>
-        <button type="button" class="btn btn-outline-secondary">46</button>
-        <button type="button" class="btn btn-outline-secondary">48</button>
-        <button type="button" class="btn btn-outline-secondary">50</button>
-        <button type="button" class="btn btn-outline-secondary">52</button>
-        <p style="margin: 15px 0 30px 0; font-size: small;"><U>사이즈 가이드</U></p>
-
-        <button type="button" onclick="cart()" class="btn btn-dark" style="margin-top: 10px; margin-bottom: 40px;">장바구니
+        <div id="sizes">
+            <button type="button" id="44" class="btn btn-outline-secondary" onclick="cart()">44</button>
+            <button type="button" id="46" class="btn btn-outline-secondary" onclick="cart()">46</button>
+            <button type="button" id="48" class="btn btn-outline-secondary" onclick="cart()">48</button>
+            <button type="button" id="50" class="btn btn-outline-secondary" onclick="cart()">50</button>
+            <button type="button" id="52" class="btn btn-outline-secondary" onclick="cart()">52</button>
+            <p style="margin: 15px 0 30px 0; font-size: small;"><U>사이즈 가이드</U></p>
+        </div>
+        <button type="button" id="cartIn" onclick="cart()" class="btn btn-dark" style="margin-top: 10px; margin-bottom: 40px;">장바구니
             담기</button>
 
     </div>
