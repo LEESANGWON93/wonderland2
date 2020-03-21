@@ -14,17 +14,19 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+    
 .container {
-    width: 940px;
+    width: 600px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
 
+
 .order {
     text-align: left;
-    margin-left: 210px;
+    margin-left: 215px;
     font-family: 'Noto Serif KR', serif;
 }
 
