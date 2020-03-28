@@ -1,0 +1,58 @@
+.logo {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.cos {
+    width: 634px;
+    height: 950px;
+    margin: -15px 0 30px 0;
+}
+
+.wrap {
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+    
+.container {
+    width: 600px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.order {
+    text-align: left;
+    margin-left: 215px;
+    font-family: 'Noto Serif KR', serif;
+}
+
+.colour {
+    border: 1px solid gainsboro;
+    height: 30px;
+    line-height: 30px;
+    width: 200px;
+    text-align: center;
+    font-size: 12px;
+
+}
+
+#banner {
+    text-align: center;
+    line-height: 35px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 11px;
+    color: white;
+    background-color: steelblue;
+    height: 35px;
+}
+
+.box {
+    width: 10px;
+    height: 5px;
+    background-color: dimgray;
+    box-sizing: border-box;
+}
