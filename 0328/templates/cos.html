@@ -60,6 +60,11 @@
 
         }
 
+        $(document).ready(function () {
+            $('#customer').html('');
+            listing();
+        });
+
         function order() {
             let name = $('#name').val()
             let address = $('#address').val()
@@ -105,36 +110,37 @@
                     }
                 }
             });
+        }
 
-            function listing() {
-                $.ajax({
-                type: "GET",
-                url: "/jacket",
-                data: {},
-                success: function (response) {
-                    if (response['result'] == 'success') {
-                        alert(response['msg']);
-                        // 2. 성공했을 때 리뷰를 올바르게 화면에 나타내기
-                        let api = response["data"]
-                        for (let i = 0; i < api.length; i++){
-                            let name = api[i]['name']
-                            let address = api[i]['address']
-                            let phone = api[i]['phone']
-                            let inputGroupSelect01 = api[i]['inputGroupSelect01']
+        function listing() {
+            $.ajax({
+            type: "GET",
+            url: "/jacket",
+            data: {},
+            success: function (response) {
+                if (response['result'] == 'success') {
+                    alert(response['msg']);
+                    // 2. 성공했을 때 리뷰를 올바르게 화면에 나타내기
+                    let api = response["data"]
+                    for (let i = 0; i < api.length; i++){
+                        let name = api[i]['name']
+                        let address = api[i]['address']
+                        let phone = api[i]['phone']
+                        let inputGroupSelect01 = api[i]['inputGroupSelect01']
 
-                            $("#names-q1").append(`<tr style="color: red;">
-                                <td>${name}</td>
-                                <td>${address}</td>
-                                <td>${phone}</td>
-                                <td>${inputGroupSelect01}</td>
-                                </tr>`)
+                        $("#customer").append(`<tr>
+                            <td>${name}</td>
+                            <td>${address}</td>
+                            <td>${phone}</td>
+                            <td>${inputGroupSelect01}</td>
+                            </tr>`)
+                    }
                 }
-            });
-
+            }});
         }
     </script>
 
-    <!-- 왜 css에서는 작동을 안할까요? -->
+
     <style>
         .container {
             width: 600px;
@@ -142,6 +148,21 @@
             padding-left: 15px;
             margin-right: auto;
             margin-left: auto;
+        }
+
+        .q {
+         margin: 10px auto 20px auto;
+         }
+
+        table {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid;
         }
     </style>
 
@@ -286,7 +307,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon3">연락처</span>
             </div>
-            <input id="phone" type="number" class="form-control" placeholder="010-" aria-label="010-"
+            <input id="phone" type="number" class="form-control" placeholder="-없이 숫자만 입력하세요" aria-label="-없이 숫자만 입력하세요."
                 aria-describedby="basic-addon1">
         </div>
 
@@ -314,7 +335,7 @@
             style="margin-top: 10px; margin-bottom: 40px;">결제하기</button>
     </div>
 
-<table>
+        <table class="container wrap q">
             <thead>
                 <tr>
                     <td>주문자</td>

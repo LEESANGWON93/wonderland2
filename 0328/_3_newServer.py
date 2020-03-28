@@ -15,22 +15,22 @@ def buy_jacket():
    address = request.form['address']
    phone = request.form['phone']
    inputGroupSelect01 = request.form['inputGroupSelect01']
-   defaultCheck1 = request.form['defaultCheck1']
 
-   print(name, address, phone, inputGroupSelect01, defaultCheck1)
+   print(name, address, phone, inputGroupSelect01)
    db.jacket.insert_one({'name': name,
-                          'address': address,
-                          'phone': phone,
-                          'inputGroupSelect01': inputGroupSelect01
-                          return ''
+                         'address': address,
+                         'phone': phone,
+                         'inputGroupSelect01': inputGroupSelect01})
+   return ''
 
 @app.route('/jacket', methods=['GET'])
 def order_jacket():
     send_data = []
     buyer_jacket = list(db.jacket.find({}))
     for jacket in buyer_jacket:
+        print(jacket)
         send_data.append({
-            'title':jacket['title'],
+            'name':jacket['name'],
             'address': jacket['address'],
             'phone': jacket['phone'],
             'inputGroupSelect01':jacket['inputGroupSelect01']
